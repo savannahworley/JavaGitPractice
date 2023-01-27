@@ -3,21 +3,23 @@ import java.util.InputMismatchException;
 
 public class Demo
 {
+   public static void main(String[] args)
+   {
 	Scanner kb = new Scanner(System.in);
-	String animal;
+	int animal;
 	Zoo z;
 	System.out.println("Choose 1 or 2 to select an animal: ");
 	try
 	{
-		animal = kb.nextLine();
+		animal = kb.nextInt();
 	}
 	catch(InputMismatchException e)
 	{
 		System.out.println("Please enter a number between 1 and 2.");
-		animal = kb.nextLine();
+		animal = kb.nextInt();
 	}
 
-	if(kb == 1)
+	if(animal == 1)
 	{
 		z = new Otter();		
 	}
@@ -27,4 +29,5 @@ public class Demo
 	}
 
 	z.eat();
+   }
 }
